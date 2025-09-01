@@ -4,6 +4,12 @@ function showLetter() {
   document.getElementById("introText").style.opacity = 0;
   document.querySelector(".btn").style.display = "none";
 
+  // play background music
+  const bgMusic = document.getElementById("bgMusic");
+  bgMusic.play().catch(err => {
+    console.log("Autoplay blocked, user interaction needed:", err);
+  });
+
   setTimeout(() => {
     const letterBox = document.getElementById("letterBox");
     const typedText = document.getElementById("typedText");
